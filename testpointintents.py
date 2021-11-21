@@ -101,7 +101,8 @@ def generateIntents_k1_complete(num, count, rules, mode):
     #range1_new = int(range1)
     #range2_new = int(range2)
     content1 = ""
-    outfile = open("outfile.txt","a+")
+    filename = "connectivity_"+num+"hosts.txt"
+    outfile = open(filename,"a+")
     for i in range(1,int(num)+1):
         #range1_new = int(range1)        
         for j in range(1,int(num)+1):
@@ -130,7 +131,7 @@ def generateIntents_k1_complete(num, count, rules, mode):
                         count += 1
                         print(json.dumps(jsonfile))
                         rules.append(jsonfile)
-                        content1 = "Host " +str(i)+ "-> Host " +str(j)+ "\n"
+                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i)+ "-> Host " +str(j)+ ", ingress=" +str(jsonfile['deviceId'])+ ":" +str(jsonfile['criteria'][0]['port'])+ ", egress=" +str(jsonfile['deviceId'])+ ":" +str(jsonfile['instruction'][0]['port']) + "\n"
                         outfile.write(content1)
             #range1_new = int(range1_new) + j
         #range2_new = int(range2_new) + i
