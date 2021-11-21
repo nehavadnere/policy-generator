@@ -13,7 +13,7 @@ from PolicyLib import PolicyHandler
 
 import pdb
 
-ONOS_IP = "172.17.0.3"
+ONOS_IP = "127.0.0.1"
 count  = 0
 
 

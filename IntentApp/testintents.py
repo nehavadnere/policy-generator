@@ -5,7 +5,7 @@ from random import randrange
 import requests
 import json
 import codecs
-from pymongo import MongoClient 
+#from pymongo import MongoClient 
 
 def main(argv):
 	print 'Format: python intentscript.py <number of intents> <host range begining> <host range end>'
@@ -16,13 +16,13 @@ def main(argv):
 	num = sys.argv[1]
 	range1 = sys.argv[2]
 	range2 = sys.argv[3]
-	conn = MongoClient()  
-	db = conn.database  
-	IntentStore = db.IntentStore
+#	conn = MongoClient()  
+#	db = conn.database  
+#	IntentStore = db.IntentStore
 
-	generateIntents(num, range1, range2, IntentStore)
+	generateIntents(num, range1, range2)
 
-def generateIntents(num, range1, range2, IntentStore):
+def generateIntents(num, range1, range2):
 	for i in range(int(num)):
 		src = randrange(int(range1),int(range2))
 		dst = randrange(int(range1),int(range2))
@@ -41,7 +41,7 @@ def generateIntents(num, range1, range2, IntentStore):
 			dst_full = '00:00:00:00:00:{}/None'.format(dst)
         
 		intent = 'add-host-intent {} {}'.format(src_full,dst_full)
-		IntentStore.insert_one({'type':'host-intent', 'src':src_full, 'dst':dst_full})
+		#IntentStore.insert_one({'type':'host-intent', 'src':src_full, 'dst':dst_full})
 
 		#REST API
 		URL = "http://localhost:8181/onos/v1/intents"
@@ -59,16 +59,16 @@ def generateIntents(num, range1, range2, IntentStore):
 		print "------------------"
 		print r.text
 		print "------------------"
-		with codecs.open('../../example4.json', "r", encoding="utf-8") as newrule:
+		with codecs.open('resources/example6.json', "r", encoding="utf-8") as newrule:
 			jsonfile = json.load(newrule)
 			jsonfile['one'] = src_full
 			jsonfile['two'] = dst_full
 		print newrule.encoding
-		with open("../../example4.json", "w") as newrule:
+		with open("resources/example4.json", "w") as newrule:
 			json.dump(jsonfile, newrule)
-		cursor = IntentStore.find()
-		for record in cursor:
-			print(record)
+		#cursor = IntentStore.find()
+		#for record in cursor:
+    		#	print(record)
 		r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
 		print r.content
 
