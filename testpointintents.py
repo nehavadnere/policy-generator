@@ -8,7 +8,7 @@ import json
 import codecs
 import time
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from PolicyLib import PolicyHandler 
+#from PolicyLib import PolicyHandler 
 #from pymongo import MongoClient 
 
 import pdb
@@ -100,6 +100,8 @@ def writeFile(self, content, filename, outputPath):
 def generateIntents_k1_complete(num, count, rules, mode):
     #range1_new = int(range1)
     #range2_new = int(range2)
+    content1 = ""
+    outfile = open("outfile.txt","a+")
     for i in range(1,int(num)+1):
         #range1_new = int(range1)        
         for j in range(1,int(num)+1):
@@ -128,8 +130,13 @@ def generateIntents_k1_complete(num, count, rules, mode):
                         count += 1
                         print(json.dumps(jsonfile))
                         rules.append(jsonfile)
+                        content1 = "Host " +str(i)+ "-> Host " +str(j)+ "\n"
+                        outfile.write(content1)
             #range1_new = int(range1_new) + j
         #range2_new = int(range2_new) + i
+#        with open("outfile.txt", "a+") as outfile:
+#            outfile.write(content1)
+    outfile.close()
 
 def generateIntents_k1(num, range1, range2):
     for i in range(int(num)):

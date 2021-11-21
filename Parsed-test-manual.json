@@ -1,0 +1,1444 @@
+{
+    "rules": [
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000001",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000002",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000003",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000004",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000005",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000006",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000007",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000008",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000009",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000a",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000b",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000c",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000d",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000e",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000000f",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000010",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000011",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000012",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000013",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000014",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000015",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000016",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000017",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000018",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000019",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001a",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001b",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001c",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001d",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001e",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000001f",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000020",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000021",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000022",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000023",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 4,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000024",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000025",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000026",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000027",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000028",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000029",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002a",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002b",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002c",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 5,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002d",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002e",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000002f",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000030",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000031",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000032",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000033",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000034",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000035",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 6,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000036",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000037",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000038",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000039",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003a",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003b",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003c",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003d",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003e",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 7,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000003f",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000040",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000041",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000042",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000043",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000044",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000045",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000046",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000047",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 8,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000048",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000049",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004a",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004b",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004c",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004d",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004e",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000004f",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000050",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 9,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000051",
+            "instruction": [
+                {
+                    "port": "10",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000052",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000053",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000054",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000055",
+            "instruction": [
+                {
+                    "port": "4",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000056",
+            "instruction": [
+                {
+                    "port": "5",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000057",
+            "instruction": [
+                {
+                    "port": "6",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000058",
+            "instruction": [
+                {
+                    "port": "7",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "00000000000000059",
+            "instruction": [
+                {
+                    "port": "8",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 10,
+                    "type": "IN_PORT"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "0000000000000005a",
+            "instruction": [
+                {
+                    "port": "9",
+                    "type": "OUTPUT"
+                }
+            ]
+        }
+    ]
+}
