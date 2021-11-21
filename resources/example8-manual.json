@@ -1,0 +1,21 @@
+{
+	"criteria": [
+		{
+			"port":1,
+			"type":"IN_PORT"
+		},
+		{
+	        	"type": "ETH_SRC",
+	        	"mac": ""
+      		}
+
+	],
+	"deviceId": "of:0000000000000001",
+	"id": "",
+	"instruction": [
+	    {
+		"port": "",
+		"type": "OUTPUT"
+	    }
+	]
+}

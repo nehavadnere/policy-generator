@@ -1,0 +1,34 @@
+{
+  "type": "PointToPointIntent",
+  "appId": "org.onosproject.cli",
+  "priority": 100,
+  "selector": {
+    "criteria": [
+      {
+        "type": "IPV4_SRC",
+        "ip": ""
+      },
+      {
+        "type": "IPV4_DST",
+        "ip": ""
+      },
+      {
+        "type": "TCP_SRC",
+        "tcpPort": ""
+      },
+      {
+        "type": "TCP_DST",
+        "tcpPort": ""
+      }
+    ]
+  },
+  "ingressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  },
+  "egressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  }
+}
+

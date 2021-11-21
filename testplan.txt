@@ -1,0 +1,71 @@
+CURRENT STATUS
+--------------
+
+testintents.py -- generates basic host-to-host intent
+                  packet headers: src-mac, dst-mac
+
+PLAN
+------
+1. Add test intents for different VNFs (use flows instead of intents, since intents needs mac/vlan packet headers)
+2. Routing (2 Headers- dst-ip, dst-port)
+3. ACL (4 headers- src-mac, dst-mac, src-ip, dst-ip)
+4. L2 Switching (2 headers- src-mac, dst-mac) -- same as #7
+5. L3 Switching (2 headers- src-ip, dst-ip)
+6. VxLAN
+7. Current host-to-host intents (2 headers- src-mac, dst-mac)
+
+TODO: 
+plan statements  :: problem statement / solution statement 
+ -- efficiency
+ -- security
+
+--------------------
+Updated version 1.1
+--------------------
+
+Step 1: Attribute association to EC
+	initialization 
+Step 2: Attribute-based mathcing wrt EC groups - Lookup + Conflict Detection
+	2.1) Generating Model (Overall)
+	  2.1.1) NFs
+	    - L2Fwd
+	    - L3Fwd
+	    - routing
+	    - ACL
+	  2.1.2) # of attributes
+	    - K = 1, 2, 3, 4, ..., 10
+	  2.1.3) # of Hosts
+	    - 10^2, 10^3, 10^4 ...
+	  2.1.4) # of Flow rules
+	    - 10^4, 10^5, 10^6 ...
+	  2.1.5) Datasets
+	    - Stanford
+	    - Fattree
+	    - simpleTopology
+	    - Purdue (need to check for availability)
+	2.1) Per rule updates
+	For all three: (a) Process EMEC
+	               (b) Process SUBEC
+	               (c) Process OLEC
+	  2.2.1) NFs
+	    - L2Fwd
+	    - L3Fwd
+	    - routing
+	    - ACL
+	  2.2.2) # of attributes
+	    - K = 1, 2, 3, 4, ..., 10
+	  2.2.3) # of Hosts
+	    - 10^2, 10^3, 10^4 ...
+	  2.2.4) # of Flow rules
+	    - 10^4, 10^5, 10^6 ...
+	  2.2.5) Datasets
+	    - Stanford
+	    - Fattree
+	    - simpleTopology
+	    - Purdue (need to check for availability)
+Step 3: Conflict resolution
+	- Resolving Inheritance
+	- Resolving Polymorphism
+	- Resolving Aggregation
+	- Resolving Composition
+

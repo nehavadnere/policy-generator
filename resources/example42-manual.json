@@ -1,0 +1,28 @@
+{
+	"criteria": [
+		{
+			"port":1,
+			"type":"IN_PORT"
+		},
+		{
+		        "type": "ETH_SRC",
+		        "mac": ""
+	        },
+		{
+		        "type": "ETH_DST",
+		        "mac": ""
+	        },
+		{
+        		"type": "UDP_DST",
+		        "udpPort": ""
+	        }
+	],
+	"deviceId": "of:0000000000000001",
+	"id": "48695172664055447",
+	"instruction": [
+	    {
+		"port": "2",
+		"type": "OUTPUT"
+	    }
+	]
+}

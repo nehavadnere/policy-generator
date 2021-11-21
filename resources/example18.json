@@ -1,0 +1,22 @@
+{
+  "type": "PointToPointIntent",
+  "appId": "org.onosproject.cli",
+  "priority": 100,
+  "selector": {
+    "criteria": [
+      {
+        "type": "VLAN_VID",
+        "vlanid": ""
+      }
+    ]
+  },
+  "ingressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  },
+  "egressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  }
+}
+

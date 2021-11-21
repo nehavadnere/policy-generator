@@ -1,0 +1,24 @@
+{
+	"criteria": [
+		{
+			"port":1,
+			"type":"IN_PORT"
+		},
+		{
+		        "type": "IPV4_SRC",
+		        "ip": ""
+	        },
+		{
+		        "type": "IPV4_DST",
+		        "ip": ""
+	        }
+	],
+	"deviceId": "of:0000000000000001",
+	"id": "48695172664055447",
+	"instruction": [
+	    {
+		"port": "2",
+		"type": "OUTPUT"
+	    }
+	]
+}

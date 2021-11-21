@@ -1,0 +1,38 @@
+{
+  "type": "PointToPointIntent",
+  "appId": "org.onosproject.cli",
+  "priority": 100,
+  "selector": {
+    "criteria": [
+      {
+        "type": "ETH_SRC",
+        "mac": ""
+      },
+      {
+        "type": "ETH_DST",
+        "mac": ""
+      },
+      {
+        "type": "IPV4_SRC",
+        "ip": ""
+      },
+      {
+        "type": "IPV4_DST",
+        "ip": ""
+      },
+      {
+        "type": "TCP_SRC",
+        "tcpPort": ""
+      }
+    ]
+  },
+  "ingressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  },
+  "egressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  }
+}
+

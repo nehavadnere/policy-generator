@@ -1,0 +1,26 @@
+{
+  "type": "PointToPointIntent",
+  "appId": "org.onosproject.cli",
+  "priority": 100,
+  "selector": {
+    "criteria": [
+      {
+        "type": "UDP_DST",
+        "udpPort": ""
+      },
+      {
+        "type": "TCP_SRC",
+        "tcpPort": ""
+      }
+    ]
+  },
+  "ingressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  },
+  "egressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  }
+}
+

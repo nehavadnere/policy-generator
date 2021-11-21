@@ -1,0 +1,16 @@
+#Select every function one by one (from testpointintent.py) and then run following
+
+
+- For every run:
+(i) Test for EMEC-concentration dataset:
+  1. Start onos docker
+     sudo docker restart onos1
+
+  2. Start mininet topology:
+     sudo mn --topo single,100 --controller remote,ip=172.17.0.2 --switch=ovsk --mac
+
+  3. Generate dataset:
+     python testpointintents.py 100 1 100 15
+
+  4. Run the algorithms to test based on the dataset generated in Step 3.
+     python3 main.py Flows_EMECfocus.json waterfall

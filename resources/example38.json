@@ -1,0 +1,30 @@
+{
+  "type": "PointToPointIntent",
+  "appId": "org.onosproject.cli",
+  "priority": 100,
+  "selector": {
+    "criteria": [
+      {
+        "type": "ETH_SRC",
+        "mac": ""
+      },
+      {
+        "type": "ETH_DST",
+        "mac": ""
+      },
+      {
+        "type": "VLAN_VID",
+        "vlanid": ""
+      }
+    ]
+  },
+  "ingressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  },
+  "egressPoint": {
+    "port": "",
+    "device": "of:0000000000000001"
+  }
+}
+
