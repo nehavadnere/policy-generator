@@ -363,7 +363,7 @@ def generateIntentPortVariations(num, range1, range2, mode):
 
 def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count):
     content1 = ""
-    filename = "connectivity_all_"+num+"hosts.txt"
+    filename = "topo1_network1_"+num+"hosts.txt"
     outfile = open(filename,"a+")
     for i in range(1,int(num)+1):
         for j in range(1,int(num)+1):
