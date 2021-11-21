@@ -13,7 +13,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pdb
 
-ONOS_IP = "127.0.0.1"
+#ONOS_IP = "127.0.0.1"
+ONOS_IP = "localhost"
 count  = 0
 
 
@@ -78,6 +79,11 @@ def main(argv):
         SUBEC_focused(num,range1, range2, rules, mode)
     elif int(test_num) == 17:
         OLEC_focused(num,range1, range2, rules, mode)
+    elif int(test_num) == 18:
+        #generateIntents_k8_tcpPort_proto(num, range1, range2, "onos", 80)
+        generateIntentPortVariations(num, range1, range2, "onos")
+    elif int(test_num) == 19:
+        generateIntents_k8_tcpPort(num, range1, range2, onos)
     else:
         print("Enter a test number betwen 1-17")
     opf = {}
@@ -96,6 +102,14 @@ def writeFile(self, content, filename, outputPath):
         file1.write(content)
         file1.close()
 
+#def generateIntents_proto(num, count, rules, mode, proto):
+#    filename = "connectivity_"+num+"hosts.txt"
+#    outfile = open(filename,"a+")
+#    for i in range(1,int(num)+1):
+#        for j in range(1,int(num)+1):
+#            if i!=j:
+#                #REST API
+#                # ONOS mode
             
 def generateIntents_k1_complete(num, count, rules, mode):
     #range1_new = int(range1)
@@ -321,27 +335,130 @@ def generateIntents_k7_tcpPort(num, range1, range2):
         range1 = int(range1) + 1
         range2 = int(range2) -1
 
-def generateIntents_k8_tcpPort(num, range1, range2):
-    for i in range(int(num)):
-        details = generateDetails(range1,range2)    
-        #REST API
-        URL = "http://172.17.0.2:8181/onos/v1/intents"
-        AUTH = ('onos','rocks')
-        HEADERS = {'content-type': 'application/json', 'Access':'application/json'}
-        with codecs.open('resources/example14.json', "r", encoding="utf-8") as newrule:
-            jsonfile = json.load(newrule)
-            jsonfile['ingressPoint']['port'] = str(range1)
-            jsonfile['egressPoint']['port'] = str(range2)
-            jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
-            jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
-            jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
-            jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
-            jsonfile['selector']['criteria'][4]['tcpPort'] = details['tcpsrc']
-            jsonfile['selector']['criteria'][5]['tcpPort'] = details['tcpdst']
-        r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
-        print(r.content)
-        range1 = int(range1) + 1
-        range2 = int(range2) -1
+def generateIntentPortVariations(num, range1, range2, mode):
+    portMap = [
+                    {
+                        'proto':80,
+                        'name':'html',
+                        'l4':'tcp'
+                    },
+                    {
+                        'proto':1433,
+                        'name':'sql',
+                        'l4':'udp'
+                    },                    
+                    {
+                        'proto':143,
+                        'name':'imap',
+                        'l4':'tcp'
+                    }
+                ]            
+    count = 0
+    for i in range(len(portMap)):
+        proto = portMap[i]['proto']
+        l4 = portMap[i]['l4']
+        count = generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4,count)
+
+
+
+def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count):
+    content1 = ""
+    filename = "connectivity_all_"+num+"hosts.txt"
+    outfile = open(filename,"a+")
+    for i in range(1,int(num)+1):
+        for j in range(1,int(num)+1):
+            if i!=j:
+                details = generateDetails(i,j)    
+                #REST API
+                if mode == "onos":
+                    URL = "http://{}:8181/onos/v1/intents".format(ONOS_IP)
+                    #URL = "http://localhost:8181/onos/v1/intents"
+                    AUTH = ('onos','rocks')
+                    HEADERS = {'content-type': 'application/json', 'Access':'application/json'}
+                    if l4=="tcp":
+                        with codecs.open('resources/example14.json', "r", encoding="utf-8") as newrule:
+                            jsonfile = json.load(newrule)
+                            jsonfile['ingressPoint']['port'] = str(i)
+                            jsonfile['egressPoint']['port'] = str(j)
+                            jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
+                            jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
+                            jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
+                            jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
+                            jsonfile['selector']['criteria'][4]['tcpPort'] = proto
+                            jsonfile['selector']['criteria'][5]['tcpPort'] = proto
+                        r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
+                        print(r.content)
+                        count += 1
+                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i)+ "-> Host " +str(j)
+                        content1 = content1 + ", ingress=" +str(jsonfile['ingressPoint']['device'])+ ":" +str(jsonfile['ingressPoint']['port'])
+                        content1 = content1 +", egress=" +str(jsonfile['egressPoint']['device'])+ ":" +str(jsonfile['egressPoint']['port'])
+                        content1 = content1 + ", src_mac=" +details['src_full']
+                        content1 = content1 + ", dst_mac=" +details['dst_full']
+                        content1 = content1 + ", src_ip=" +details['ipsrc']
+                        content1 = content1 + ", dst_ip=" +details['ipdst']
+                        content1 = content1 + ", src_tcp=" +str(jsonfile['selector']['criteria'][4]['tcpPort'])
+
+                        content1 = content1 + ", dst_tcp=" +str(jsonfile['selector']['criteria'][5]['tcpPort'])
+                        content1 = content1 + "\n"
+                        outfile.write(content1)
+                        #range1 = int(range1) + 1
+                        #range2 = int(range2) -1
+                    if l4=="udp":
+                        with codecs.open('resources/example45.json', "r", encoding="utf-8") as newrule:
+                            jsonfile = json.load(newrule)
+                            jsonfile['ingressPoint']['port'] = str(i)
+                            jsonfile['egressPoint']['port'] = str(j)
+                            jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
+                            jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
+                            jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
+                            jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
+                            jsonfile['selector']['criteria'][4]['udpPort'] = proto
+                            jsonfile['selector']['criteria'][5]['udpPort'] = proto
+                        r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
+                        print(r.content)
+                        count += 1
+                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i)+ "-> Host " +str(j)
+                        content1 = content1 + ", ingress=" +str(jsonfile['ingressPoint']['device'])+ ":" +str(jsonfile['ingressPoint']['port'])
+                        content1 = content1 +", egress=" +str(jsonfile['egressPoint']['device'])+ ":" +str(jsonfile['egressPoint']['port'])
+                        content1 = content1 + ", src_mac=" +details['src_full']
+                        content1 = content1 + ", dst_mac=" +details['dst_full']
+                        content1 = content1 + ", src_ip=" +details['ipsrc']
+                        content1 = content1 + ", dst_ip=" +details['ipdst']
+                        content1 = content1 + ", src_udp=" +str(jsonfile['selector']['criteria'][4]['udpPort'])
+
+                        content1 = content1 + ", dst_udp=" +str(jsonfile['selector']['criteria'][5]['udpPort'])
+                        content1 = content1 + "\n"
+                        outfile.write(content1)
+                        #range1 = int(range1) + 1
+                        #range2 = int(range2) -1
+
+    outfile.close()
+    return count
+
+def generateIntents_k8_tcpPort(num, range1, range2, mode):
+    for i in range(1,int(num)+1):
+        for j in range(1,int(num)+1):
+            if i!=j:
+                details = generateDetails(i,j)    
+                #REST API
+                if mode == "onos":
+                    URL = "http://{}:8181/onos/v1/intents".format(ONOS_IP)
+                    AUTH = ('onos','rocks')
+                    HEADERS = {'content-type': 'application/json', 'Access':'application/json'}
+                    with codecs.open('resources/example14.json', "r", encoding="utf-8") as newrule:
+                        jsonfile = json.load(newrule)
+                        jsonfile['ingressPoint']['port'] = str(range1)
+                        jsonfile['egressPoint']['port'] = str(range2)
+                        jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
+                        jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
+                        jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
+                        jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
+                        jsonfile['selector']['criteria'][4]['tcpPort'] = details['tcpsrc']
+                        jsonfile['selector']['criteria'][5]['tcpPort'] = details['tcpdst']
+                    r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
+                    print(r.content)
+                    #range1 = int(range1) + 1
+                    #range2 = int(range2) -1
 
 def generateIntents_k9_rev(num, range1, range2):
     for i in range(int(num)):
