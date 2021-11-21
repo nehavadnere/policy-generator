@@ -1,0 +1,88 @@
+{
+    "$loki": 3,
+    "config": 3,
+    "criticalHosts": [
+        "Defense.ONOS1.h1",
+        "Defense.ONOS2.h4"
+    ],
+    "meta": {
+        "created": 1597840997869,
+        "revision": 0,
+        "version": 0
+    },
+    "missionRequirements": [
+        {
+            "dst": "Defense.ONOS2.h5",
+            "id": 0,
+            "port": "tcp:443",
+            "src": "Defense.ONOS1.h1"
+        },
+        {
+            "dst": "Defense.ONOS2.h3",
+            "id": 1,
+            "port": "tcp:443",
+            "src": "Defense.ONOS1.h2"
+        },
+        {
+            "dst": "Defense.ONOS2.h4",
+            "id": 2,
+            "port": "tcp:443",
+            "src": "Defense.ONOS2.h3"
+        },
+        {
+            "dst": "Defense.ONOS1.h2",
+            "id": 3,
+            "port": "tcp:43",
+            "src": "Defense.ONOS2.h5"
+        }
+    ],
+    "name": "DefenseCrossed",
+    "network": 3,
+    "securityRules": [
+        {
+            "action": "blocked",
+            "dst": "Defense.ONOS2.h4",
+            "id": 0,
+            "src": "Defense.ONOS1.h2"
+        }
+    ],
+    "systems": [
+        {
+            "color": "yellow",
+            "domains": [
+                {
+                    "hosts": [
+                        {
+                            "IP4Address": "10.11.1.103",
+                            "name": "h1"
+                        },
+                        {
+                            "IP4Address": "10.11.1.102",
+                            "name": "h2"
+                        }
+                    ],
+                    "name": "ONOS1"
+                },
+                {
+                    "hosts": [
+                        {
+                            "IP4Address": "10.11.3.107",
+                            "name": "h3"
+                        },
+                        {
+                            "IP4Address": "10.11.4.201",
+                            "name": "h4"
+                        },
+                        {
+                            "IP4Address": "10.11.4.110",
+                            "name": "h5"
+                        }
+                    ],
+                    "name": "ONOS2"
+                }
+            ],
+            "name": "Defense",
+            "systems": []
+        }
+    ]
+}

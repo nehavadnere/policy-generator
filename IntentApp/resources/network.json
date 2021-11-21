@@ -1,0 +1,433 @@
+{
+    "$loki": 3,
+    "controllers": [
+        {
+            "annotations": null,
+            "critical": false,
+            "display_name": "ONOS1",
+            "id": "ONOS1",
+            "state": {
+                "alternatives": [],
+                "health": 0.61,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "ONOS1",
+                    "role": "controller",
+                    "runtime": "OpenJDK 8 JDK v1.8.0_181-8u181-b13",
+                    "version": "1.11.2"
+                },
+                "ip": "192.168.11.1/32",
+                "timestamp": "2020-04-08T08:39:52",
+                "trust": 1
+            },
+            "switches": [
+                "of:000000163e02788b",
+                "of:000000163e30cafa"
+            ]
+        },
+        {
+            "annotations": null,
+            "critical": false,
+            "display_name": "ONOS2",
+            "id": "ONOS2",
+            "state": {
+                "alternatives": [],
+                "health": 0.61,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "ONOS2",
+                    "role": "controller",
+                    "runtime": "OpenJDK 8 JDK v1.8.0_181-8u181-b13",
+                    "version": "1.11.2"
+                },
+                "ip": "192.168.11.1/32",
+                "timestamp": "2020-04-08T08:39:52",
+                "trust": 1
+            },
+            "switches": [
+                "of:0000d2531a31a047"
+            ]
+        }
+    ],
+    "hosts": [
+        {
+            "critical": true,
+            "data": {
+                "id": "00:16:3E:34:7D:64/None",
+                "innerVlan": "None",
+                "ipAddresses": [
+                    "10.11.1.103"
+                ],
+                "locations": [
+                    {
+                        "elementId": "of:0000d2531a31a047",
+                        "port": "7"
+                    }
+                ],
+                "mac": "00:16:3E:34:7D:64",
+                "outerTpid": "unknown",
+                "vlan": "None"
+            },
+            "display_name": "h1",
+            "id": "00:16:3E:34:7D:64/None",
+            "schema": "ONOS1",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Host",
+                    "role": "host",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "10.11.1.103",
+                "timestamp": "2020-04-07T16:43:00.153547",
+                "trust": 1
+            },
+            "wanLinks": []
+        },
+        {
+            "critical": false,
+            "data": {
+                "id": "00:16:3E:BF:74:13/None",
+                "innerVlan": "None",
+                "ipAddresses": [
+                    "10.11.1.102"
+                ],
+                "locations": [
+                    {
+                        "elementId": "of:0000d2531a31a047",
+                        "port": "6"
+                    }
+                ],
+                "mac": "00:16:3E:BF:74:13",
+                "outerTpid": "unknown",
+                "vlan": "None"
+            },
+            "display_name": "h2",
+            "id": "00:16:3E:BF:74:13/None",
+            "schema": "ONOS1",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Host",
+                    "role": "host",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "10.11.1.102",
+                "timestamp": "2020-04-07T16:43:00.164102",
+                "trust": 1
+            },
+            "wanLinks": []
+        },
+        {
+            "critical": false,
+            "data": {
+                "id": "00:16:3E:4A:A4:4F/None",
+                "innerVlan": "None",
+                "ipAddresses": [
+                    "10.11.3.107"
+                ],
+                "locations": [
+                    {
+                        "elementId": "of:000000163e30cafa",
+                        "port": "4"
+                    }
+                ],
+                "mac": "00:16:3E:4A:A4:4F",
+                "outerTpid": "unknown",
+                "vlan": "None"
+            },
+            "display_name": "h3",
+            "id": "00:16:3E:4A:A4:4F/None",
+            "schema": "ONOS2",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Host",
+                    "role": "host",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "10.11.3.107",
+                "timestamp": "2020-04-07T16:43:00.179072",
+                "trust": 1
+            },
+            "wanLinks": []
+        },
+        {
+            "critical": true,
+            "data": {
+                "critical": true,
+                "displayName": "h4",
+                "id": "00:16:3E:EA:80:5F/None",
+                "innerVlan": "None",
+                "ipAddresses": [
+                    "10.11.4.201"
+                ],
+                "locations": [
+                    {
+                        "elementId": "of:000000163e02788b",
+                        "port": "9"
+                    }
+                ],
+                "mac": "00:16:3E:EA:80:5F",
+                "outerTpid": "unknown",
+                "vlan": "None"
+            },
+            "display_name": "h4",
+            "id": "00:16:3E:EA:80:5F/None",
+            "schema": "ONOS2",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Host",
+                    "role": "host",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "10.11.4.201",
+                "timestamp": "2020-01-06T10:17:25.991583",
+                "trust": 1
+            },
+            "wanLinks": []
+        },
+        {
+            "critical": false,
+            "data": {
+                "id": "00:16:3E:DD:97:A6/None",
+                "innerVlan": "None",
+                "ipAddresses": [
+                    "10.11.4.110"
+                ],
+                "locations": [
+                    {
+                        "elementId": "of:000000163e02788b",
+                        "port": "4"
+                    }
+                ],
+                "mac": "00:16:3E:DD:97:A6",
+                "outerTpid": "unknown",
+                "vlan": "None"
+            },
+            "display_name": "h5",
+            "id": "00:16:3E:DD:97:A6/None",
+            "schema": "ONOS2",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Host",
+                    "role": "host",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "10.11.4.110",
+                "timestamp": "2020-04-07T16:43:00.189262",
+                "trust": 1
+            },
+            "wanLinks": []
+        }
+    ],
+    "links": [
+        {
+            "dst": {
+                "device": "s1",
+                "port": "1"
+            },
+            "src": {
+                "device": "s2",
+                "port": "1"
+            },
+            "state": "ACTIVE",
+            "type": "DIRECT"
+        },
+        {
+            "dst": {
+                "device": "s2",
+                "port": "1"
+            },
+            "src": {
+                "device": "s1",
+                "port": "1"
+            },
+            "state": "ACTIVE",
+            "type": "DIRECT"
+        },
+        {
+            "dst": {
+                "device": "s2",
+                "port": "2"
+            },
+            "src": {
+                "device": "s3",
+                "port": "2"
+            },
+            "state": "ACTIVE",
+            "type": "DIRECT"
+        },
+        {
+            "dst": {
+                "device": "s3",
+                "port": "2"
+            },
+            "src": {
+                "device": "s2",
+                "port": "2"
+            },
+            "state": "ACTIVE",
+            "type": "DIRECT"
+        }
+    ],
+    "meta": {
+        "created": 1597840997865,
+        "revision": 0,
+        "version": 0
+    },
+    "switches": [
+        {
+            "critical": false,
+            "data": {
+                "annotations": {
+                    "channelId": "192.168.11.102:53632",
+                    "managementAddress": "192.168.11.102",
+                    "protocol": "OF_13"
+                },
+                "available": true,
+                "chassisId": "163e02788b",
+                "driver": "ovs",
+                "hw": "Open vSwitch",
+                "id": "of:000000163e02788b",
+                "lastUpdate": "1586292170360",
+                "mfr": "Nicira, Inc.",
+                "role": "MASTER",
+                "serial": "None",
+                "sw": "2.6.2",
+                "totalHosts": "2",
+                "type": "SWITCH"
+            },
+            "display_name": "s1",
+            "id": "of:000000163e02788b",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Open vSwitch",
+                    "role": "switch",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "192.168.11.102/32",
+                "timestamp": "2020-04-07T16:43:00.076393",
+                "trust": 1
+            }
+        },
+        {
+            "critical": false,
+            "data": {
+                "annotations": {
+                    "channelId": "192.168.11.103:59288",
+                    "managementAddress": "192.168.11.103",
+                    "protocol": "OF_13"
+                },
+                "available": true,
+                "chassisId": "163e30cafa",
+                "driver": "ovs",
+                "hw": "Open vSwitch",
+                "id": "of:000000163e30cafa",
+                "lastUpdate": "1586292170660",
+                "mfr": "Nicira, Inc.",
+                "role": "MASTER",
+                "serial": "None",
+                "sw": "2.6.2",
+                "totalHosts": "1",
+                "type": "SWITCH"
+            },
+            "display_name": "s2",
+            "id": "of:000000163e30cafa",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Open vSwitch",
+                    "role": "switch",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "192.168.11.103/32",
+                "timestamp": "2020-04-07T16:43:00.08721",
+                "trust": 1
+            }
+        },
+        {
+            "critical": true,
+            "data": {
+                "annotations": {
+                    "channelId": "192.168.11.101:34644",
+                    "managementAddress": "192.168.11.101",
+                    "protocol": "OF_13"
+                },
+                "available": true,
+                "chassisId": "d2531a31a047",
+                "critical": true,
+                "driver": "ovs",
+                "hw": "Open vSwitch",
+                "id": "of:0000d2531a31a047",
+                "lastUpdate": "1586292171050",
+                "mfr": "Nicira, Inc.",
+                "role": "MASTER",
+                "serial": "None",
+                "sw": "2.6.2",
+                "totalHosts": "2",
+                "type": "SWITCH"
+            },
+            "display_name": "s3",
+            "id": "of:0000d2531a31a047",
+            "state": {
+                "alternatives": [],
+                "health": 1,
+                "info": {
+                    "platform": "Ubuntu 14.04.5 LTS",
+                    "product": "Open vSwitch",
+                    "role": "switch",
+                    "runtime": "Linux kernel 4.4.0",
+                    "version": "2.0.2"
+                },
+                "ip": "192.168.11.101/32",
+                "timestamp": "2020-04-07T16:43:00.098913",
+                "trust": 1
+            }
+        }
+    ],
+    "wanLinks": [
+        {
+            "id": "Defense-ONOS1-cloud",
+            "schema": "airs_Defense_ONOS1_edge1",
+            "subtype": "satellite",
+            "type": "wireless"
+        },
+        {
+            "id": "Defense-ONOS1-cloud-federation",
+            "schema": "airs_Defense-ONOS1-cloud_edge1",
+            "subtype": "cloud",
+            "type": "wired"
+        },
+        {
+            "id": "Defense-ONOS2-cloud",
+            "schema": "airs_Defense_ONOS2_edge1",
+            "subtype": "cable",
+            "type": "wired"
+        }
+    ]
+}
