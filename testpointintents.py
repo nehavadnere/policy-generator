@@ -40,6 +40,10 @@ def main(argv):
     mode = "manual"
     # mode = "onos"
 
+    #Editable: 
+    modified = True
+    percent = 50
+
     #PolicyHandler().comparePort(1,1)
 
     if int(test_num) == 1:
@@ -81,7 +85,7 @@ def main(argv):
         OLEC_focused(num,range1, range2, rules, mode)
     elif int(test_num) == 18:
         #generateIntents_k8_tcpPort_proto(num, range1, range2, "onos", 80)
-        generateIntentPortVariations(num, range1, range2, "onos")
+        generateIntentPortVariations(num, range1, range2, "onos",modified,percent)
     elif int(test_num) == 19:
         generateIntents_k8_tcpPort(num, range1, range2, onos)
     else:
@@ -186,6 +190,43 @@ def generateIntents_k1(num, range1, range2):
         range2 = int(range2) -1
 
 def generateDetails(range1, range2):
+    #src = randrange(int(range1),int(range2))
+    #dst = randrange(int(range1),int(range2))
+    src = int(range1)
+    dst = int(range2)
+    src_hex = hex(src)[2:]
+    dst_hex = hex(dst)[2:]
+    lens = len(src_hex)
+    lend = len(dst_hex)
+
+    if (lens < 2 and lend < 2):
+       src_full = '00:00:00:00:00:0{}'.format(src_hex)
+       dst_full = '00:00:00:00:00:0{}'.format(dst_hex)
+    elif (lens < 2 and lend >= 2):
+       src_full = '00:00:00:00:00:0{}'.format(src_hex)
+       dst_full = '00:00:00:00:00:{}'.format(dst_hex)
+    elif (lend < 2 and lens >= 2):
+       dst_full = '00:00:00:00:00:0{}'.format(dst_hex)
+       src_full = '00:00:00:00:00:{}'.format(src_hex)
+    else : 
+       src_full = '00:00:00:00:00:{}'.format(src_hex)
+       dst_full = '00:00:00:00:00:{}'.format(dst_hex)
+    ipsrc = '10.0.0.{}/32'.format(src)
+    ipdst = '10.0.0.{}/32'.format(dst)
+
+    data = {'src_full' : src_full, 
+            'dst_full' : dst_full,
+            'ipsrc' : ipsrc,
+            'ipdst' : ipdst,
+            'tcpsrc' : src,
+            'tcpdst' : dst,
+            'udpsrc' : src,
+            'udpdst' : dst,
+            'vlanid' : src}
+    return data
+
+# For updated/modified topology
+def generateDetails_modified(range1, range2, k, num, offset):
     #src = randrange(int(range1),int(range2))
     #dst = randrange(int(range1),int(range2))
     src = int(range1)
@@ -335,7 +376,7 @@ def generateIntents_k7_tcpPort(num, range1, range2):
         range1 = int(range1) + 1
         range2 = int(range2) -1
 
-def generateIntentPortVariations(num, range1, range2, mode):
+def generateIntentPortVariations(num, range1, range2, mode,modified, percent):
     portMap = [
                     {
                         'proto':80,
@@ -357,18 +398,50 @@ def generateIntentPortVariations(num, range1, range2, mode):
     for i in range(len(portMap)):
         proto = portMap[i]['proto']
         l4 = portMap[i]['l4']
-        count = generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4,count)
+        count = generateIntents_k8_tcpPort_proto(int(num), range1, range2, mode, proto, l4,count, modified, percent)
 
 
 
-def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count):
+def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count, modified, percent):
     content1 = ""
-    filename = "topo1_network1_"+num+"hosts.txt"
+    continue_modification=False
+    k=1
+    filename = "topo1_network1_"+str(num)+"hosts.txt"
+    if modified == True:
+        filename = "topo1_network1m_"+str(num)+"hosts.txt"
     outfile = open(filename,"a+")
+    base = int(int(num)*int(percent)/100)
     for i in range(1,int(num)+1):
         for j in range(1,int(num)+1):
+            i_orig = inew = i
+            j_orig = jnew = j
             if i!=j:
-                details = generateDetails(i,j)    
+                if i>=int(num)-int(base) and modified==True:
+                    ai = num - i
+                    inew = base -  ai + 1
+                    inew = num + inew
+                    jnew = j
+                if j>=int(num)-int(base) and modified==True:
+                    aj = num - j
+                    jnew = base -  aj + 1
+                    jnew = num + jnew
+                    inew = i
+                #if modified==True and i>=int(num)-int(base) or j>=int(num)-int(base):
+                details = generateDetails(inew,jnew)    
+                #elif i<(num-(num/percent)) and j>=(num-(num/percent)) and modified==True:
+                #    for inew in range(1,base+1):
+                #        offset = base - base + inew
+                #        details = generateDetails_modified(i,num+offset)    
+                #        continue_modification=True
+                #        k=k+1
+                #elif i>=(num-(num/percent)) and j>=(num-(num/percent)) and modified==True:
+                #    for inew in range(1,base+1):
+                #        offset = base - base + inew
+                #        details = generateDetails_modified(num+offset,j)    
+                #        continue_modification=True
+                #        k=k+1
+                #else:
+                #    details = generateDetails(i,j)    
                 #REST API
                 if mode == "onos":
                     URL = "http://{}:8181/onos/v1/intents".format(ONOS_IP)
@@ -378,18 +451,18 @@ def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count
                     if l4=="tcp":
                         with codecs.open('resources/example14.json', "r", encoding="utf-8") as newrule:
                             jsonfile = json.load(newrule)
-                            jsonfile['ingressPoint']['port'] = str(i)
-                            jsonfile['egressPoint']['port'] = str(j)
+                            jsonfile['ingressPoint']['port'] = str(inew)
+                            jsonfile['egressPoint']['port'] = str(jnew)
                             jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
                             jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
                             jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
                             jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
                             jsonfile['selector']['criteria'][4]['tcpPort'] = proto
                             jsonfile['selector']['criteria'][5]['tcpPort'] = proto
-                        r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
-                        print(r.content)
+                        #r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
+                        #print(r.content)
                         count += 1
-                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i)+ "-> Host " +str(j)
+                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i_orig)+ "-> Host " +str(j_orig)
                         content1 = content1 + ", ingress=" +str(jsonfile['ingressPoint']['device'])+ ":" +str(jsonfile['ingressPoint']['port'])
                         content1 = content1 +", egress=" +str(jsonfile['egressPoint']['device'])+ ":" +str(jsonfile['egressPoint']['port'])
                         content1 = content1 + ", src_mac=" +details['src_full']
@@ -414,10 +487,10 @@ def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count
                             jsonfile['selector']['criteria'][3]['ip'] = details['ipdst']
                             jsonfile['selector']['criteria'][4]['udpPort'] = proto
                             jsonfile['selector']['criteria'][5]['udpPort'] = proto
-                        r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
-                        print(r.content)
+                        #r = requests.post(url = URL, auth = AUTH, data = json.dumps(jsonfile), headers = HEADERS) 
+                        #print(r.content)
                         count += 1
-                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i)+ "-> Host " +str(j)
+                        content1 = "Rule " +str(count)+ ":: "+ "Host " +str(i_orig)+ "-> Host " +str(j_orig)
                         content1 = content1 + ", ingress=" +str(jsonfile['ingressPoint']['device'])+ ":" +str(jsonfile['ingressPoint']['port'])
                         content1 = content1 +", egress=" +str(jsonfile['egressPoint']['device'])+ ":" +str(jsonfile['egressPoint']['port'])
                         content1 = content1 + ", src_mac=" +details['src_full']
