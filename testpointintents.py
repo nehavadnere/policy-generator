@@ -42,7 +42,7 @@ def main(argv):
 
     #Editable: 
     modified = True
-    percent = 50
+    percent = 10
 
     #PolicyHandler().comparePort(1,1)
 
@@ -452,7 +452,10 @@ def generateIntents_k8_tcpPort_proto(num, range1, range2, mode, proto, l4, count
                         with codecs.open('resources/example14.json', "r", encoding="utf-8") as newrule:
                             jsonfile = json.load(newrule)
                             jsonfile['ingressPoint']['port'] = str(inew)
-                            jsonfile['egressPoint']['port'] = str(jnew)
+                            if j>=int(num)-int(2*base) and j<int(num)-int(base) and modified==True:
+                                jsonfile['egressPoint']['port'] = "NOACTION"
+                            else:
+                                jsonfile['egressPoint']['port'] = str(jnew)
                             jsonfile['selector']['criteria'][0]['mac'] = details['src_full']
                             jsonfile['selector']['criteria'][1]['mac'] = details['dst_full']
                             jsonfile['selector']['criteria'][2]['ip'] = details['ipsrc']
